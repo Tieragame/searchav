@@ -1,0 +1,15 @@
+#!/bin/bash
+PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin
+export PATH
+dir1="/run/media/tiera"
+dir2="/mnt/sdd"
+clear
+echo -e "\n\n\t\tav搜索脚本"
+read -p "输入条件1:" value1
+read -p "输入条件2:" value2
+if [ -n "$value2" ]; then
+read -p "输入条件3:" value3
+fi
+echo -e "\n————————-\n"
+echo -e "搜索结果"
+find $dir1 -iname "*$value1*" -type d -a -name "*$value2*" -type d -a -name "*$value3*" -type d -printf "%f\n" 2> /dev/null
